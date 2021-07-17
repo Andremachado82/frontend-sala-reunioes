@@ -31,10 +31,20 @@ export class RoomListComponent implements OnInit {
       })
   }
 
-  roomDetails(id) {}
+  roomDetails(id: number) {
+    this.router.navigate(['details', id]);
+  }
 
-  updateRoom(id) {}
+  updateRoom(id: number) {
+    this.router.navigate(['update', id]);
+  }
 
-  deleteRoom(id){}
+  deleteRoom(id: number){
+    this.roomService.deleteRoomById(id)
+    .subscribe(response => {
+      console.log('response')
+      this.reloadData();
+    })
+  }
 
 }
