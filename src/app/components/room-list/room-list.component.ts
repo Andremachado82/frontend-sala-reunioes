@@ -1,5 +1,8 @@
+import { RoomService } from './../../services/room.service';
 import { Room } from './../../models/room';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-room-list',
@@ -8,11 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoomListComponent implements OnInit {
 
-  rooms;
+  rooms: Observable<Room[]>;
 
-  constructor() { }
+  constructor(
+    private roomService: RoomService,
+    private router: Router
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.rooms = this.roomService.getRoomsList()
+    console.log('list', this.rooms)
   }
 
   roomDetails(id) {}

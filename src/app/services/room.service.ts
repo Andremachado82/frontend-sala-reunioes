@@ -1,9 +1,20 @@
+import { Room } from './../models/room';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoomService {
 
-  constructor() { }
+  url = "http://localhost:8082";
+
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  getRoomsList(): Observable<any> {
+    return this.http.get(`${this.url}`);
+  }
 }
