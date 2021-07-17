@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class RoomService {
 
-  url = "http://localhost:8082";
+  url = "http://localhost:8082/room";
 
   constructor(
     private http: HttpClient
   ) { }
 
   getRoomsList(): Observable<any> {
-    return this.http.get(`${this.url}`);
+    return this.http.get<Room[]>(`${this.url}/list`);
   }
 }

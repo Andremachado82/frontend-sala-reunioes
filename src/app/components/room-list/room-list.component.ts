@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class RoomListComponent implements OnInit {
 
-  rooms: Observable<Room[]>;
+  rooms: Room[];
 
   constructor(
     private roomService: RoomService,
@@ -23,8 +23,12 @@ export class RoomListComponent implements OnInit {
   }
 
   reloadData() {
-    this.rooms = this.roomService.getRoomsList()
-    console.log('list', this.rooms)
+    this.roomService.getRoomsList()
+      .subscribe((response: Room[]) => {
+        console.log('response', response)
+        this.rooms = response;
+
+      })
   }
 
   roomDetails(id) {}

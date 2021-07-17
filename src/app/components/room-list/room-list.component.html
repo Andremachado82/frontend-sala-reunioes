@@ -14,11 +14,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let room of rooms | async">
+        <tr *ngFor="let room of rooms">
           <td>{{room.name}}</td>
-          <td>{{room.date}}</td>
-          <td>{{room.startHour}}</td>
-          <td>{{room.endHour}}</td>
+          <td>{{room.date | date: "dd/MM/yyyy"}}</td>
+          <td>{{room.startHour | date: "dd/MM/yyyy - HH:mm"}}</td>
+          <td>{{room.endHour | date: "dd/MM/yyyy - HH:mm"}}</td>
           <td><button (click)="deleteRoom(room.id)" class="btn btn-danger">Delete</button>
             <button (click)="updateRoom(room.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
               <button (click)="roomDetails(room.id)" class="btn btn-info" style="margin-left: 10px">Details</button>

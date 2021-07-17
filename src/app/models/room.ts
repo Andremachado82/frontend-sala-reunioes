@@ -1,8 +1,8 @@
 export class Room {
   id: number;
   name: String;
-  date: String;
-  startHour: String;
-  endHour: String;
+  date: Date;
+  startHour: Date;
+  endHour: Date;
   active: Boolean;
 }
