@@ -25,7 +25,6 @@ export class RoomListComponent implements OnInit {
   reloadData() {
     this.roomService.getRoomsList()
       .subscribe((response: Room[]) => {
-        console.log('response', response)
         this.rooms = response;
 
       })
@@ -42,7 +41,6 @@ export class RoomListComponent implements OnInit {
   deleteRoom(id: number){
     this.roomService.deleteRoomById(id)
     .subscribe(response => {
-      console.log('response')
       this.reloadData();
     })
   }

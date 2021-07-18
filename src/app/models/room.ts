@@ -1,8 +1,8 @@
 export class Room {
   id: number;
-  name: String;
-  date: Date;
-  startHour: Date;
-  endHour: Date;
+  name: string;
+  date: string;
+  startHour: string;
+  endHour: string;
   active: Boolean;
 }

@@ -23,8 +23,6 @@ export class RoomService {
   }
 
   updateRoom(id: number, room: Room) {
-    console.log('service',id )
-    console.log('service',room )
     return this.http.put(`${this.url}/${id}`, room);
   }
 

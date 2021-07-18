@@ -23,10 +23,8 @@ export class UpdateRoomComponent implements OnInit {
     this.room = new Room();
 
     this.id = this.route.snapshot.params['id'];
-    console.log('id', this.id)
     this.roomService.getRoom(this.id)
       .subscribe(data => {
-        console.log(data)
         this.room = data;
       }, error => console.log(error));
   }
