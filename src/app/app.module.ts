@@ -1,7 +1,8 @@
+import { UpdateRoomComponent } from './components/update-room/update-room.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { CreateRoomComponent } from './components/create-room/create-room.component';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     CreateRoomComponent,
+    UpdateRoomComponent,
     RoomListComponent,
     RoomDetailsComponent
 
@@ -23,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID,      useValue: 'pt-BR'}  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,4 @@
+import { Room } from './../../models/room';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateRoomComponent implements OnInit {
 
+  room: Room = new Room();
+  submitted = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  newRoom() {}
+
+  onSubmit(){}
 
 }
